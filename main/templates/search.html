@@ -8,17 +8,19 @@
 </head>
 <body>
     <header>
-        <!-- <div id="btn-wrapper" class="header-components">
+        <div id="name" class="header-components">
+            <h2 id="name-txt">Covid Leads</h2>
+        </div>
+        <div id="btn-wrapper" class="header-components">
         <form action="/add/" method="post">{% csrf_token %}
             <button id="btn" type="submit">Add</button>
         </form>
-        </div> -->
+        </div>
         <form action="/search/" method="post">{% csrf_token %}
         <div id="search-wrapper" class="header-components">
             <input type="text" name="searchbox" id="searchbox" placeholder="Search by resources, city, state.." />
         </div>
         <div id="sub-btn" class="header-components">
-            
                 <button id="sub" type="submit">Search</button>
         </div>
     </form>
@@ -48,9 +50,41 @@
     </main>
     <footer id="footer"> </footer>
 <style>
+#search-head{
+    margin: 10px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    /* font-style: italic; */
+    font-weight: lighter;
+}
 body{
     margin: 0;
     background-color:rgb(14, 14, 14);
+
+}
+#btn-wrapper{
+    /* background-color:blue; */
+    height:50px;
+    position: absolute;
+    top: 0px;
+    right: 445px;
+}
+#btn{
+    background-color:black;
+    outline:none;
+    border: 2px solid white;
+    border-radius:5px;
+    color: white;
+    font-size:18px;
+    padding: 2px 10px;
+    margin : 11px;
+}
+#btn:hover{
+    color: black;
+    background-color: white;
+}
+.header-components{
+    display: inline-block;
 }
 #searchbox{
     font-size: 15px;
@@ -61,6 +95,7 @@ body{
     padding: 3px 10px;
     border-radius: 5px;
     border: none;
+    width: 300px;
 }
 
 .header-components{
@@ -101,24 +136,20 @@ header{
 }
 #body-wrapper{
     /* background-color:blue; */
+    margin: 10px auto 20px auto ;
 }
 .address{
     margin: 0;
 }
 h3, h4, h5{
     margin: 0;
-    display: inline;
-}
-#search-head{
-    margin: 10px 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: red;
-    /* font-style: italic; */
-    font-weight: lighter;
+    display: inline; 
 }
 .cards{
     background-color:white;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: row ;
+    flex-wrap: nowrap;
     /* float: left; */
     width: 250px;
     margin: 10px;
@@ -143,6 +174,28 @@ h3, h4, h5{
     margin: auto 5px;
     color: rgb(211, 53, 53);
 }
+#link{
+    text-decoration: none;
+    color: white;
+}
+#link:hover{
+    cursor: pointer;
+    text-shadow: 0px 0px 1px white;
+}
+footer{
+    position: absolute;
+    bottom:0px;
+    text-align:center;
+    height: 25px;
+    position: fixed;
+    width: 100%;
+    background-color:black;
+}
+#ftr{
+    height:25px;
+    bottom:0px;
+    margin: 3px auto;
+}
 .num{
     margin: auto 4px;
 }
@@ -161,6 +214,34 @@ h3, h4, h5{
 .address{
     color: black;
     font-weight:bold;
+}
+#name{
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    /* background-color: blue; */
+    height:50px;
+}
+#name-txt{
+    color: white;
+    margin: 9px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 </style>
 <!-- <script>

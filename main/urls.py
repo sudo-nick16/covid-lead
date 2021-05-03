@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('', views.index),
     path('home/', views.index),
     path('add/', views.add),
     path('addlead/', views.addlead),

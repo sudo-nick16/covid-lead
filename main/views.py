@@ -18,7 +18,6 @@ def addlead(request):
 
 def search(request):
     query = request.POST.get("searchbox", False)
-    print(query)
     if query:
         all_data = Data.objects.filter(
             Q(city__icontains = query) | Q(resources__icontains = query) |Q(state__icontains = query)

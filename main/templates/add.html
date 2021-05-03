@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+    
+</head>
+<body>
+    
+    <main id="main">
+        <center>
+            <div id="table-div">
+        <form action="/addlead/" method="post">{% csrf_token %}
+        <table cellspacing="10" cellpadding="3">
+            <tr>
+                <td id="heading" colspan="2">
+                    <center>Add verified sources</center>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="" >Resources </label></td>
+                <td><input type="text" name="resources" placeholder="Like O2 cylinders, beds etc.." required /></td>
+            </tr>
+            <tr>
+                <td><label for="" >Address </label></td>
+                <td><input type="text" name="address" placeholder="Street address" required /></td>
+            </tr>
+            <tr>
+                <td><label for="" >City </label></td>
+                <td><input type="text" name="city" required /></td>
+            </tr>
+            <tr>
+                <td><label for="" >State </label></td>
+                <td><input type="text" name="state" required /></td>
+            </tr>
+            <tr>
+                <td><label for="" >Contact </label></td>
+                <td><input type="text" name="contact" placeholder="Phone number.." required /></td>
+            </tr>
+            <tr >
+                <td colspan="2"><center><input type="submit" id="btn" value="Add" required /></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+    </center>
+    </main>
+<style>
+body{
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+#heading{
+    color: rgb(69, 69, 214);
+    font-size: 25px;
+}
+#table-div{
+    position: absolute;
+    left: calc(40%);
+    top: calc(20%);
+    position: fixed;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px white solid;
+    color: white;
+    border-radius: 10px;
+}
+input{
+    outline:none;
+    padding: 5px 10px;
+    border: 2px white solid;
+    color: rgb(32, 32, 32);
+    border-radius: 10px;
+    font-weight: bold ;
+    font-size: 15px;
+}
+#btn{
+    background-color:black;
+    outline:none;
+    border: 2px solid white;
+    border-radius:5px;
+    color: white;
+    font-size:20px;
+    padding: 15x 15px;
+    margin : 5px;
+}
+#btn:hover{
+    color: black;
+    background-color: white;
+}
+</style>
+
+<!-- <script>
+window.setTimeout(function () {
+location.href = "http://127.0.0.1:8000/add/";
+}, 1000);
+</script> -->
+</body>
+</html>

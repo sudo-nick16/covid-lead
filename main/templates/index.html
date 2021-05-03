@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Lead</title>
+</head>
+<body>
+    <header>
+        <div id="name" class="header-components">
+            <h2 id="name-txt">Covid Leads</h2>
+        </div>
+        <div id="btn-wrapper" class="header-components">
+        <form action="/add/" method="post">{% csrf_token %}
+            <button id="btn" type="submit">Add</button>
+        </form>
+        </div>
+        <form action="/search/" method="post">{% csrf_token %}
+        <div id="search-wrapper" class="header-components">
+            <input type="text" name="searchbox" id="searchbox" placeholder="Search by resources, city, state.." />
+        </div>
+        <div id="sub-btn" class="header-components">
+                <button id="sub" type="submit">Search</button>
+        </div>
+    </form>
+    </header>
+    <main id="body-wrapper">
+    <section id="section">
+        <div class="main-wrapper">
+                {% for data in all_data %}
+                <div class="cards">
+                    <div class="card-content">
+                    <h3 class="reshead">{{data.resources}}</h3>
+                        <h4 class="addressd" id="ahead">Address : </h4> 
+                        <div class="addressd"> 
+                            <p class="address">
+                            {{data.address}} <br>
+                            {{data.city}} <br>
+                            {{data.state}} <br>
+                            </p>
+                        </div><br>
+                        <h4 class="con">Contact : <h4 class="num">{{data.contact}}</h4></h4>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+    <footer id="footer"> 
+        <div id="ftr">
+            <a href="http://linkedin.com/in/sudo-nick" id="link">@sudo-nick</a>
+        </div>
+    </footer>
+<style>
+body{
+    margin: 0;
+    background-color:rgb(14, 14, 14);
+
+}
+#btn-wrapper{
+    /* background-color:blue; */
+    height:50px;
+    position: absolute;
+    top: 0px;
+    right: 445px;
+}
+#btn{
+    background-color:black;
+    outline:none;
+    border: 2px solid white;
+    border-radius:5px;
+    color: white;
+    font-size:18px;
+    padding: 2px 10px;
+    margin : 11px;
+}
+#btn:hover{
+    color: black;
+    background-color: white;
+}
+.header-components{
+    display: inline-block;
+}
+#searchbox{
+    font-size: 15px;
+    height: 25px;
+    margin: 9px 0px;
+    outline: none;
+    color: rgb(46, 46, 46);
+    padding: 3px 10px;
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+}
+
+.header-components{
+    display: inline-block;
+}
+#search-wrapper{
+    outline: none;
+    position: absolute;
+    right: 120px;
+}
+#sub-btn{
+    position: absolute;
+    right: 30px;
+}
+
+#sub{
+    border-radius: 5px;
+    margin: 11px 0px;
+    padding: 2px 6px;
+    font-size:18px;
+    font-family: Arial;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    border: 2px solid white;
+    background-color:black;
+    color: white;
+    
+}
+#sub:hover{
+    background-color:white;
+    color: black;
+}
+header{
+    margin: 0px;
+    background-color:black;
+    height: 50px;
+    width: 100%;
+}
+#body-wrapper{
+    /* background-color:blue; */
+    margin: 10px auto 20px auto ;
+}
+.address{
+    margin: 0;
+}
+h3, h4, h5{
+    margin: 0;
+    display: inline; 
+}
+.cards{
+    background-color:white;
+    display: inline-flex;
+    flex-direction: row ;
+    flex-wrap: nowrap;
+    /* float: left; */
+    width: 250px;
+    margin: 10px;
+    border-radius:5px;
+    box-shadow: 2px 2px 3px black;
+    text-overflow: ellipsis;
+}
+.card-content{
+    padding: 10px;
+}
+
+.reshead{
+    display: inline-block;
+    /* float: left; */
+    width:calc(100%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(53, 53, 211);
+}
+.con{
+    margin: auto 5px;
+    color: rgb(211, 53, 53);
+}
+#link{
+    text-decoration: none;
+    color: white;
+}
+#link:hover{
+    cursor: pointer;
+    text-shadow: 0px 0px 1px white;
+}
+footer{
+    position: absolute;
+    bottom:0px;
+    text-align:center;
+    height: 25px;
+    position: fixed;
+    width: 100%;
+    background-color:black;
+}
+#ftr{
+    height:25px;
+    bottom:0px;
+    margin: 3px auto;
+}
+.num{
+    margin: auto 4px;
+}
+
+#section{
+    margin: 5px 10px;
+}
+#ahead{
+    vertical-align: top;
+}
+.addressd{
+    display: inline-block !important;
+    margin:5px;
+    color: rgb(211, 53, 53);
+}
+.address{
+    color: black;
+    font-weight:bold;
+}
+#name{
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    /* background-color: blue; */
+    height:50px;
+}
+#name-txt{
+    color: white;
+    margin: 9px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>
+<!-- <script>
+window.setTimeout(function () {
+    location.href = "http://127.0.0.1:8000/home/";
+}, 1000);
+</script> -->
+</body>
+</html>

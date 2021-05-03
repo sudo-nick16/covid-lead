@@ -12,7 +12,9 @@ Sources with negative score will be removed automatically.
 I hope this project helps out the people in need. 
 I will try to finish it as soon as possible so it's production ready in no time.
 
-Technologies Used: Django.
+Technologies Used: Django <br>
+Link to the project: https://covid-lead.herokuapp.com <br>
+(I have used random data for the demo.)
 
 Screenshots:
 

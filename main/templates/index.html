@@ -58,6 +58,7 @@ body{
     background-color:rgb(14, 14, 14);
 
 }
+
 #btn-wrapper{
     /* background-color:blue; */
     height:50px;
@@ -141,14 +142,14 @@ h3, h4, h5{
     margin: 0;
     display: inline; 
 }
+.main-wrapper{
+    margin: auto 15px auto 10px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
 .cards{
     background-color:white;
-    display: inline-flex;
-    flex-direction: row ;
-    flex-wrap: nowrap;
-    /* float: left; */
-    width: 250px;
-    margin: 10px;
     border-radius:5px;
     box-shadow: 2px 2px 3px black;
     text-overflow: ellipsis;
@@ -160,7 +161,7 @@ h3, h4, h5{
 .reshead{
     display: inline-block;
     /* float: left; */
-    width:230px;
+    width:calc(100%);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
